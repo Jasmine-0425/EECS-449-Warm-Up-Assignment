@@ -1,0 +1,28 @@
+Part 1.
+There were some problem with mongosh setup (port 27017 cannot work for me). 
+I switched to port 27018 following Chris' advice on Ed. Other things went well.
+
+Part 2.
+I had problem trying to integrate the second LLM, GPT2, into same server.jac file.
+So I created another file, gpt_server.jac to run them separately to resolve the issue.
+Also, in running client.jac, it automatically interprets my directory name (contains \UM) 
+as Unicode (since it contains \U) so I had to change directory name.
+
+Part 3. 
+Things went well in this part.
+
+1. Explain what the state represents and how it can be used in the chatbot:
+Recommendation handles scenarios where the user wants specific recommendations 
+based on predefined criteria, such as suggesting products, services, or actions. 
+The chatbot will respond with personalized recommendations based on the query 
+and the context.
+
+2. Explain how the chatbot will route the user query to your custom chat model based on the classification:
+The routing logic is based on the classification of the user’s query. 
+The classify function will analyze the user's message and determine whether 
+the query belongs to RAG, QA, or the new Recommendation category. 
+If the message fits the recommendation category, the chatbot will route the query 
+to the RecommendationChat node. This node will then respond with personalized suggestions
+ or recommendations based on previous interactions or context.
+
+ 
